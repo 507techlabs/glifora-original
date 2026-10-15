@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#6500e8"><title>Glifora original — Editor de letras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="tema.css">
+</head>
+<body>
+<header class="top"><div class="brand-mark">G</div><div><h1>Glifora</h1><p>Tu texto. Tu estilo. Tu creación.</p></div><span class="free-tag">GRATIS</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">ESTUDIO TIPOGRÁFICO</p><h2>Crea letras que se hagan notar.</h2><p>Explora fuentes, ajusta cada detalle y exporta tu diseño.</p></div></section>
+<div class="workspace">
+<section class="editor panel">
+<div class="section-title"><div><span class="step">01</span><h3>Tu texto</h3></div><span class="muted">Hasta 120 caracteres</span></div>
+<textarea id="text" maxlength="120" rows="2" placeholder="Escribe tu nombre o frase…">Grissy Jaén</textarea>
+<div class="section-title"><div><span class="step">02</span><h3>Biblioteca de fuentes</h3></div><span id="fontCount" class="muted"></span></div>
+<div class="font-tools"><input id="fontSearch" type="search" placeholder="Buscar fuente o estilo…"><select id="fontCategory"><option value="">Todas las categorías</option></select></div>
+<div id="fontList" class="font-list" aria-label="Biblioteca de fuentes"></div>
+<div class="section-title"><div><span class="step">03</span><h3>Formato</h3></div></div>
+<div class="format-row"><button id="bold" class="toggle" aria-pressed="false"><b>B</b> Negrita</button><button id="italic" class="toggle" aria-pressed="false"><i>I</i> Cursiva</button></div>
+<div class="control-grid"><label>Tamaño <output id="sizeOut">100 px</output><input id="size" type="range" min="24" max="180" value="100"></label><label>Espaciado <output id="spacingOut">0 px</output><input id="spacing" type="range" min="-2" max="12" value="0"></label></div>
+<div class="section-title"><div><span class="step">04</span><h3>Color de las letras</h3></div></div>
+<div class="color-line"><label class="color-field">Relleno <input id="fill" type="color" value="#f2c66d"></label><div id="swatchesFill" class="swatches"></div></div>
+<div class="section-title"><div><span class="step">05</span><h3>Contorno</h3></div><label class="switch"><input id="strokeOn" type="checkbox" checked><span></span></label></div>
+<div class="color-line"><label class="color-field">Color <input id="strokeColor" type="color" value="#402a12"></label><label class="range-inline">Grosor <output id="strokeOut">2 px</output><input id="strokeWidth" type="range" min="0" max="12" value="2"></label></div>
+<div class="section-title"><div><span class="step">06</span><h3>Sombra</h3></div><label class="switch"><input id="shadowOn" type="checkbox" checked><span></span></label></div>
+<div class="color-line"><label class="color-field">Color <input id="shadowColor" type="color" value="#000000"></label><label class="range-inline">Opacidad <output id="shadowOpacityOut">45%</output><input id="shadowOpacity" type="range" min="0" max="100" value="45"></label></div>
+<div class="control-grid"><label>Horizontal <output id="shadowXOut">6 px</output><input id="shadowX" type="range" min="-40" max="40" value="6"></label><label>Vertical <output id="shadowYOut">8 px</output><input id="shadowY" type="range" min="-40" max="40" value="8"></label><label>Desenfoque <output id="blurOut">8 px</output><input id="blur" type="range" min="0" max="40" value="8"></label></div>
+<div class="section-title"><div><span class="step">07</span><h3>Exportar</h3></div></div>
+<div class="export-grid"><label>Formato<select id="format"><option value="png">PNG · fondo transparente</option><option value="jpg">JPG · fondo sólido</option></select></label><label id="bgWrap" hidden>Fondo JPG<input id="bgColor" type="color" value="#ffffff"></label><label>Resolución<select id="scale"><option value="1">Normal</option><option value="2">Alta · 2×</option><option value="3" selected>Máxima · 3×</option></select></label></div>
+<div class="action-row"><button id="download" class="primary">↓ Descargar diseño</button><button id="reset" class="secondary">Restablecer</button></div><p id="status" class="status" role="status">La exportación PNG conserva la transparencia.</p>
+</section>
+<aside class="preview-column"><section class="preview-panel panel"><div class="section-title"><div><span class="step">VISTA</span><h3>Tu diseño</h3></div><button id="bgToggle" class="small-button">Cambiar fondo</button></div><div id="preview" class="preview checker"><canvas id="canvas"></canvas></div><p class="preview-note">La vista previa se actualiza mientras editas. El archivo exportado respeta los ajustes.</p></section>
+<section class="panel templates"><div class="section-title"><div><span class="step">EXTRAS</span><h3>Ideas rápidas</h3></div></div><div class="template-list"><button data-template="gold">✦ Dorado elegante</button><button data-template="neon">◉ Neón moderno</button><button data-template="classic">✧ Clásico limpio</button><button data-template="graffiti">✹ Urbano intenso</button></div><p class="preview-note">Las plantillas son opcionales; puedes personalizar todos sus ajustes.</p></section>
+<section class="panel about"><h3>Una herramienta gratuita</h3><p>Glifora usa fuentes abiertas cuando sus licencias lo permiten. La biblioteca en línea necesita internet para descargar tipografías nuevas; los controles y la exportación funcionan en tu navegador.</p></section></aside>
+</div><footer>GLIFORA · Crea a tu manera<br><span style="font-size:9px;letter-spacing:.08em;opacity:.8">507 Tesla · 507 TechLabs</span></footer>
+</main><div id="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body></html>
